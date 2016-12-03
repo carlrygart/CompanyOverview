@@ -1,15 +1,6 @@
 $(document).ready(function(){
 
     var json_blob = null;
-    var table = null;
-
-    // $.ajax({
-    //     url: "http://192.168.8.101:8888/employer-stats/1",
-    //     method: "GET",
-    //     success: function(data, status, xhr) {
-    //         json_blob = data;
-    //     }
-    // });
 
     var table = $('#example').DataTable( {
                 ajax: {
@@ -109,7 +100,7 @@ $(document).ready(function(){
 
 function format ( d ) {
     // `d` is the original data object for the row
-    var html = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+    var html = '<div class="col-xs-3"><table class="table" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
         '<tr>'+
             '<th>Users</th>' +
             '<th>Tags</th>' +
@@ -117,11 +108,11 @@ function format ( d ) {
 
     console.log(d);
     d['jobseekers'].forEach(function(currentValue, index, arr) {
-        var popoverText = "No tags"
+        var popoverText = "No tags";
         if (currentValue['tags'] != null) {
             popoverText = '<table>';
             currentValue['tags'].forEach(function(val) {
-                popoverText += '<tr><td>'+val['name']+'</td><td>'+val['counter']+'</td></tr>'
+                popoverText += '<tr><td>'+val['name']+'</td><td>'+val['counter']+'</td></tr>';
             });
             popoverText += '</table>';
         }
@@ -131,6 +122,6 @@ function format ( d ) {
         '</tr>'
     });
 
-    html += '</table>';
+    html += '</table></div>';
     return html;
 }
