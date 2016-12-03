@@ -17,8 +17,21 @@ $(document).ready(function(){
             { "data": "id" },
             { "data": "title" },
             { "data": "like" },
-            { "data": "dislikes" }
-        ]
+            { "data": "dislikes" },
+            { "data": "like"},
+        ],  
+        columnDefs: [ {
+            targets: 5,
+            createdCell: function (td, cellData, rowData, row, col) {
+                var value = rowData["like"]-rowData["dislikes"];
+                if(value > 0){
+                    $(td).html(value).css('color', 'green');
+                }
+                else{
+                    $(td).html(value).css('color', 'red');   
+                }
+            }
+        } ]           
     });
 
     $('#example tbody').on('click', 'td.details-control', function () {
