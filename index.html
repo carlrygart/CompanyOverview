@@ -7,15 +7,16 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Company Overview</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="companyoverview.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" scr="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript" src="companyoverview.js"></script>
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="companyoverview.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +26,19 @@
     <![endif]-->
 </head>
 <body>
+    <nav class="navbar navbar-inverse" style="margin-bottom:0px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Company overview</a>
+        </div>
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="glyphicon glyphicon-log-out" href="#"></a></li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="jumbotron text-center">
+
             <h1>
                 <span class="statcounter">
                     <span class="glyphicon glyphicon-upload green"></span>
@@ -43,6 +56,7 @@
         <table id="example" class="display " cellspacing="0" width="100%">
         <thead>
             <tr>
+                <th></th>
                 <th>ID</th>
                 <th>Title</th>
                 <th>Likes</th>
@@ -51,6 +65,7 @@
         </thead>
         <tfoot>
             <tr>
+                <th></th>
                 <th>ID</th>
                 <th>Title</th>
                 <th>Likes</th>
@@ -63,6 +78,5 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
