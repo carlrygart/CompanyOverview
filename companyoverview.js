@@ -90,6 +90,21 @@ $(document).ready(function(){
         }
     } );
 
+    var popOverSettings = {
+    placement: 'auto',
+    container: 'body',
+    trigger: 'hover',
+    html: true,
+    selector: '#hej', //Sepcify the selector here
+    content: function () {
+        return $('#popover-content').html();
+        }
+    }
+
+    $('body').popover(popOverSettings);
+
+    $('body').on()
+
 });
 
 function format ( d ) {
@@ -100,10 +115,19 @@ function format ( d ) {
             '<th>Tags</th>' +
         '</tr>';
 
+    console.log(d);
     d['jobseekers'].forEach(function(currentValue, index, arr) {
+        var popoverText = "No tags"
+        if (currentValue['tags'] != null) {
+            popoverText = '<table>';
+            currentValue['tags'].forEach(function(val) {
+                popoverText += '<tr><td>'+val['name']+'</td><td>'+val['counter']+'</td></tr>'
+            });
+            popoverText += '</table>';
+        }
         html += '<tr>'+
         '<td>'+ currentValue['name'] +'</td>'+
-            '<td>'+ currentValue['image'] +'</td>'+
+            '<td><a id="hej" href="#" data-toggle="popover" title="Tags" data-content="'+popoverText+'">View tags</a></td>'+
         '</tr>'
     });
 
