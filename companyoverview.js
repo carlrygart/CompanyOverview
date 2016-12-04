@@ -26,7 +26,6 @@ $(document).ready(function(){
                             jsonObj['jobseekers'] = currentValue['jobseekers'];
                             dataTablesJson.push(jsonObj);
                         });
-
                         // Things to do outside table..
                         var title = json['jobs'][0]['platsannons']['arbetsplats']['arbetsplatsnamn'];
                         if (title.length > 20) {
