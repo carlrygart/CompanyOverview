@@ -22,12 +22,14 @@ $(document).ready(function(){
                             var annons = platsannons['annons'];
                             jsonObj['annonsid'] = annons['annonsid'];
                             jsonObj['annonsrubrik'] = annons['annonsrubrik'];
+                            jsonObj['yrkesbenamning'] = annons['yrkesbenamning'];
+                            jsonObj['antal_platser'] = annons['antal_platser'];
 
                             jsonObj['jobseekers'] = currentValue['jobseekers'];
                             dataTablesJson.push(jsonObj);
                         });
                         // Things to do outside table..
-                        var title = json['jobs'][0]['platsannons']['arbetsplats']['arbetsplatsnamn'];
+                        var title = json['jobs'][1]['platsannons']['arbetsplats']['arbetsplatsnamn'];
                         if (title.length > 20) {
                             title = title.substring(0,20) + "...";
                         }
@@ -48,12 +50,14 @@ $(document).ready(function(){
                     },
                     { "data": "annonsid" },
                     { "data": "annonsrubrik" },
+                    { "data": "yrkesbenamning" },
+                    { "data": "antal_platser" },
                     { "data": "likes" },
                     { "data": "dislikes" },
                     { "data": "total"},
                 ],  
                 columnDefs: [ {
-                    targets: 5,
+                    targets: 7,
                     createdCell: function (td, cellData, rowData, row, col) {
                         if (cellData > 0) {
                             $(td).css('color', 'green');
